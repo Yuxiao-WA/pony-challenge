@@ -1,0 +1,35 @@
+<button mat-icon-button color="primary" routerLink='/home' aria-label="Go back to maze setup">
+    <mat-icon>home</mat-icon>
+</button>
+<mat-card class="page-block">
+    <div>
+        <h3 *ngIf='isGameOver()'>{{game_state['state-result']}}</h3>
+        <img [src]='game_result_img' width="100%">
+    </div>
+    <div id="action_buttons" *ngIf='!isGameOver()' style="margin-bottom: 1em;">
+        <button [disabled]='isPonyEastWall()' mat-mini-fab color="primary" (click)='movePony(moveDirection.East)'
+            style="margin-right: 1em;" aria-label="Go east">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+        <button [disabled]='isPonyWestWall()' mat-mini-fab color="primary" (click)='movePony(moveDirection.West)'
+            style="margin-right: 1em;" aria-label="Go west">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <button [disabled]='isPonySouthWall()' mat-mini-fab color="primary" (click)='movePony(moveDirection.South)'
+            style="margin-right: 1em;" aria-label="Go south">
+            <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <button [disabled]='isPonyNorthWall()' mat-mini-fab color="primary" (click)='movePony(moveDirection.North)'
+            style="margin-right: 1em;" aria-label="Go north">
+            <mat-icon>keyboard_arrow_up</mat-icon>
+        </button>
+        <button mat-raised-button color="primary" (click)='movePony(moveDirection.Stay)' aria-label="stay">Stay</button>
+        <h3>You can also play with arrow keys on your keyboard.</h3>
+    </div>
+    <div *ngIf='!isGameOver()'>
+        <textarea #mazePrint [rows]='maze ? maze.size[1]*2+1 : 0' [cols]='maze ? maze.size[0]*4+1 : 0'
+            [value]='maze_print' disabled></textarea>
+    </div>
+
+
+</mat-card>

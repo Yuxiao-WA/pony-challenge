@@ -1,0 +1,24 @@
+<mat-card class="page-block">
+    <img src='https://ponychallenge.trustpilot.com/help-save-the-pony.png' width="100%">
+    <mat-form-field appearance="standard">
+        <mat-label>Pick pony</mat-label>
+        <mat-select id="pony_select" [(ngModel)]='selectedPony'>
+            <mat-option *ngFor='let pony of ponies' [value]='pony'>{{pony}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <mat-label>Maze width: </mat-label>
+        <mat-slider thumbLabel tickInterval='1' min='15' max='25' [(ngModel)]='maze_width'></mat-slider>
+    </div>
+    <div>
+        <mat-label>Maze height: </mat-label>
+        <mat-slider thumbLabel tickInterval='1' min='15' max='25' [(ngModel)]='maze_height'></mat-slider>
+    </div>
+    <div>
+        <mat-label>Maze difficulty: </mat-label>
+        <mat-slider thumbLabel tickInterval='1' min='0' max='10' [(ngModel)]='difficulty'></mat-slider>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" (click)='onCreate()' aria-label="create maze">Create maze</button>
+    </div>
+</mat-card>
