@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-Notes:
+## Notes
 1. A loading animation can be added after creating maze button is clicked
 2. Tests can be improved
 3. e2e tests are missing
