@@ -184,25 +184,25 @@ export class MazeComponent implements OnInit, AfterViewInit {
   isPonyEastWall(): boolean {
     return this.maze &&
       (this.maze.pony[0] % this.maze.size[0] === this.maze.size[0] - 1 ||
-        this.maze.data[this.maze.pony[0] + 1].indexOf(MoveDirection.West) !== -1);
+        this.maze.data[this.maze.pony[0] + 1].includes(MoveDirection.West));
   }
 
   isPonyWestWall(): boolean {
     return this.maze &&
       (this.maze.pony[0] % this.maze.size[0] === 0 ||
-        this.maze.data[this.maze.pony[0]].indexOf(MoveDirection.West) !== -1);
+        this.maze.data[this.maze.pony[0]].includes(MoveDirection.West));
   }
 
   isPonyNorthWall(): boolean {
     return this.maze &&
       (this.maze.pony[0] < this.maze.size[0] ||
-        this.maze.data[this.maze.pony[0]].indexOf(MoveDirection.North) !== -1);
+        this.maze.data[this.maze.pony[0]].includes(MoveDirection.North));
   }
 
   isPonySouthWall(): boolean {
     return this.maze &&
       (this.maze.pony[0] > (this.maze.data.length - this.maze.size[0]) ||
-        this.maze.data[this.maze.pony[0] + this.maze.size[0]].indexOf(MoveDirection.North) !== -1);
+        this.maze.data[this.maze.pony[0] + this.maze.size[0]].includes(MoveDirection.North));
   }
 
 }
