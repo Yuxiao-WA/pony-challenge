@@ -29,7 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Notes:
 1. A loading animation can be added after creating maze button is clicked
-2. Maze rendering can be more responsive and prettier, e.g. painted on canvas
-3. Tests can be improved
-4. e2e tests are missing
+2. Tests can be improved
+3. e2e tests are missing
 

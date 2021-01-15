@@ -30,6 +30,13 @@ export enum MoveDirection {
     Stay = 'stay'
 }
 
+export enum WallEdge {
+    East = 'east',
+    West = 'west',
+    South = 'south',
+    North = 'north'
+}
+
 
 
 
