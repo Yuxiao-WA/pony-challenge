@@ -27,8 +27,8 @@
         <h3>You can also play with arrow keys on your keyboard.</h3>
     </div>
     <div *ngIf='!isGameOver()'>
-        <canvas #maze_canvas [width]="maze ? maze.size[1]*cell_size : 0"
-            [height]="maze ? maze.size[0]*cell_size : 0"></canvas>
+        <canvas #maze_canvas [width]="maze ? maze.size[0]*cell_size : 0"
+            [height]="maze ? maze.size[1]*cell_size : 0"></canvas>
 
     </div>
 
